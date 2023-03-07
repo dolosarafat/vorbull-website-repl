@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./style.css">
   <script src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.9.0.js"></script>
   <script src='https://kit.fontawesome.com/1ee8f271b9.js'></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 
 <script>
@@ -34,7 +34,7 @@
       <div id="nav-link-section" class="nav-section">
         <a href="#">FORUMS</a>
         <a href="#">SHOP</a>
-        <a onclick="alert('Hello\nHow are you?')">JOIN</a>
+        <a href="#" onclick="alert('Hello\nHow are you?')">JOIN</a>
       </div>
       <div id="nav-social-section" class="nav-section">
         <a href="https://dsc.gg/vorbullmc">
@@ -42,7 +42,7 @@
         </a>
       </div>
       <div id="nav-contact-section" class="nav-section">
-        <a href="#">APPLY FOR STAFF</a>
+        <a href="https://typeform">APPLY FOR STAFF</a>
       </div>
     </div>
     <button id="nav-toggle-button" type="button" onclick="handleNavToggle()">
@@ -50,11 +50,31 @@
       <i class="fa-solid fa-bars"></i>
     </button>
   </nav>
+	<script type="text/javascript">
+		// Check if the device is mobile
+		function isMobile() {
+		    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+		}
 
+		// Check the screen size
+		function isSmallScreen() {
+		    return window.innerWidth < 800;
+		}
+
+		// Remove iframes if the device is mobile or screen size is small
+		window.onload = function() {
+		    if (isMobile() || isSmallScreen()) {
+		        var iframes = document.getElementsByTagName("iframe");
+		        for (var i = 0; i < iframes.length; i++) {
+		            iframes[i].parentNode.removeChild(iframes[i]);
+		        }
+		    }
+		};
+	</script>
   <main>
     <article data-index="0" data-status="active">
-      <div>
-        <iframe class="article-image-section article-section" style="overflow:hidden" src="./mainiframe/index.html" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
+      <div class="article-image-section article-section">
+        <iframe class="iframe" style="overflow:hidden" src="./mainiframe/index.html" frameborder="0" width="100%" height="100%" scrolling="no"></iframe>
       </div>
       <div class="article-description-section article-section">
         <p>
