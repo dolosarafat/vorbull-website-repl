@@ -63,12 +63,12 @@ function initServerData(serverIp,serverPort){
 
 }
 
-initServerData("mc.hypixel.net","25565");
+initServerData("de3-infra.kholex.tech","5092");
 
 </script>
 <script>
 $(document).ready(function(){
-  $.getJSON('https://mcapi.us/server/status?ip=hypixel.net&port=25565', function(obj){
+  $.getJSON('https://mcapi.us/server/status?ip=de3-infra.kholex.tech&port=5092', function(obj){
     if(obj.online === true){
       motdHTML = obj.motd.replaceColorCodes();
       console.log(motdHTML);
